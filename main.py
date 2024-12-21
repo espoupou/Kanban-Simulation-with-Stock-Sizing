@@ -1,4 +1,4 @@
-from simulation import simulate_shift, SHIFT_DURATION, PROCESSING_TIMES, lead_times, resource_stock, csv_filename
+from simulation import simulate_shift, SHIFT_DURATION, PROCESSING_TIMES, lead_times, resource_stock, csv_filename, safety_factor
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -26,7 +26,7 @@ def calculate_stock_levels(processing_times, lead_times, safety_factor=0.1):
 
 
 if __name__ == "__main__":
-    optimal_stock = calculate_stock_levels(PROCESSING_TIMES, lead_times, 0.3)
+    optimal_stock = calculate_stock_levels(PROCESSING_TIMES, lead_times, safety_factor)
     print("Optimal Stock Levels:", optimal_stock)
     for post in optimal_stock.keys():
         resource_stock[post] = optimal_stock[post]
