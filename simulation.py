@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 csv_filename = "simulation_results.csv"
 SHIFT_DURATION = 8 * 60 * 60  # 8 hours in seconds
 stock_stop_time = 1
+safety_factor = 0.3
 
 PROCESSING_TIMES = {
     "cutting": lambda: random.uniform(100, 115),  # 1m45s mean time
